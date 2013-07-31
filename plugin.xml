@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://cordova.apache.org/ns/plugins/1.0"
+    id="com.simplec.plugins.powermanagement"
+    version="0.1.0">
+    <name>PowerManagement</name>   
+    <!-- ios -->
+    <platform name="ios">    
+        <config-file target="config.xml" parent="/*">
+            <feature name="PowerManagement">
+                <param name="ios-package" value="PowerManagement" /> 
+            </feature>
+        </config-file>
+        <js-module src="www/powermanagement.js" name="PowerManagement">
+            <clobbers target="PowerManagement" />
+        </js-module>
+        <header-file src="src/ios/PowerManagement.h" />
+	    <source-file src="src/ios/PowerManagement.m" />
+    </platform>
+</plugin>
