@@ -8,7 +8,8 @@ https://github.com/phonegap/phonegap-plugins/tree/master/iOS/PowerManagement
 The original plugin was not compatible with PhoneGap Build.  We created a plugin.xml for ios.
 Android will follow shortly, but we are not deploying there right now and cannot test it.
 
--- the rest of this file from the original readme at the GIT address above.
+The rest of this file from the original readme
+---------
 
 The PowerManagement plugin offers access to the devices power-management functionality.
 It should be used for applications which keep running for a long time without any user interaction.
