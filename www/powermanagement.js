@@ -1,8 +1,8 @@
-cordova.define("cordova/plugin/powermanagement", function(require, exports, module) {
-	var exec = require('cordova/exec');
-	
-	var PowerManagement = function() {};
-	
+(function(){
+    var cordovaRef = window.PhoneGap || window.Cordova || window.cordova;
+
+    function PowerManagement() { }
+
 	/**
 	 * Acquire a new wake-lock (keep device awake)
 	 * 
@@ -10,7 +10,7 @@ cordova.define("cordova/plugin/powermanagement", function(require, exports, modu
 	 * @param errorCallback function to be called when there was a problem with acquiring the wake-lock
 	 */
 	PowerManagement.prototype.acquire = function(successCallback,failureCallback) {
-	    exec(successCallback, failureCallback, 'PowerManagement', 'acquire', []);
+	    cordovaRef.exec(successCallback, failureCallback, 'PowerManagement', 'acquire', []);
 	}
 
 	/**
@@ -20,7 +20,7 @@ cordova.define("cordova/plugin/powermanagement", function(require, exports, modu
 	 * @param errorCallback function to be called when there was a problem while releasing the wake-lock
 	 */
 	PowerManagement.prototype.release = function(successCallback,failureCallback) {
-	    exec(successCallback, failureCallback, 'PowerManagement', 'release', []);
+	    cordovaRef.exec(successCallback, failureCallback, 'PowerManagement', 'release', []);
 	}
 
 	/**
@@ -30,10 +30,19 @@ cordova.define("cordova/plugin/powermanagement", function(require, exports, modu
 	 * @param errorCallback function to be called when there was a problem with acquiring the wake-lock
 	 */
 	PowerManagement.prototype.dim = function(successCallback,failureCallback) {
-	    exec(successCallback, failureCallback, 'PowerManagement', 'acquire', [true]);
+	    cordovaRef.exec(successCallback, failureCallback, 'PowerManagement', 'acquire', [true]);
 	}
-	
-	var powermanagement = new PowerManagement();
-	module.exports = powermanagement;
-});
+ 
+    if (cordovaRef)
+    {
+        cordovaRef.addConstructor(function() {
+            if(!window.plugins) {
+                window.plugins = {};
+            }
+            if(!window.plugins.PowerManagement) {
+                window.plugins.PowerManagement = new PowerManagement();
+            }
+        });
+    }
+})(); /* End of Temporary Scope. */
 
