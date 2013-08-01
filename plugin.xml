@@ -19,8 +19,6 @@
 	
 	<asset src="www/PowerManagement.js" target="PowerManagement.js" />
 	
-    <config-file target="config.xml" parent="/*">
-	
 	<!-- ios -->
 	<platform name="ios">
 		<!-- Cordova < 2.3 -->
