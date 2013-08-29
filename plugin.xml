@@ -26,7 +26,9 @@
         
 		<!-- Cordova >= 2.3 -->
 		<config-file target="config.xml" parent="plugins">
-			<plugin name="PowerManagement" value="PowerManagement"/>
+			<feature name="PowerManagement">
+				<param name="ios-package" value="PowerManagement" />
+			</feature>
 		</config-file>
 
 		
