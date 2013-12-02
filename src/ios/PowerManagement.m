@@ -7,11 +7,10 @@
  * Actual implementation of the interface
  */
 @implementation PowerManagement
-- (void) acquire:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options
-{
+
+- (void) acquire:(CDVInvokedUrlCommand*)command {
     CDVPluginResult* result = nil;
     NSString* jsString = nil;
-    NSString* callbackId = [arguments objectAtIndex:0];
     
     // Acquire a reference to the local UIApplication singleton
     UIApplication* app = [UIApplication sharedApplication];
@@ -24,18 +23,16 @@
     }
     else {
         result = [CDVPluginResult resultWithStatus:CDVCommandStatus_ILLEGAL_ACCESS_EXCEPTION messageAsString:@"IdleTimer already disabled"];
-        jsString = [result toErrorCallbackString:callbackId];
+        jsString = [result toErrorCallbackString:command.callbackId];
     }
     
     [self writeJavascript:jsString];
 }
 
 
-- (void) release:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options
-{    
+- (void) release:(CDVInvokedUrlCommand*)command {
     CDVPluginResult* result = nil;
     NSString* jsString = nil;
-    NSString* callbackId = [arguments objectAtIndex:0];
     
     // Acquire a reference to the local UIApplication singleton
     UIApplication* app = [UIApplication sharedApplication];
@@ -48,7 +45,7 @@
     }
     else {
         result = [CDVPluginResult resultWithStatus:CDVCommandStatus_ILLEGAL_ACCESS_EXCEPTION messageAsString:@"IdleTimer not disabled"];
-        jsString = [result toErrorCallbackString:callbackId];
+        jsString = [result toErrorCallbackString:command.callbackId];
     }
     
     [self writeJavascript:jsString];

@@ -1,3 +1,4 @@
+
 var cordovaRef = window.PhoneGap || window.Cordova || window.cordova;
 
 var PowerManagement = function() {
