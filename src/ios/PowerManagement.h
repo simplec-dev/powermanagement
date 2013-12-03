@@ -4,7 +4,7 @@
 
 #import <Cordova/CDV.h>
 
-@interface LocalNotification : CDVPlugin
+@interface PowerManagement : CDVPlugin
 
 - (void)acquire:(CDVInvokedUrlCommand*)command;
 - (void)release:(CDVInvokedUrlCommand*)command;
