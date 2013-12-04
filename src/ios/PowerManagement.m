@@ -51,5 +51,3 @@
     [self writeJavascript:jsString];
 }
 @end
-
-
