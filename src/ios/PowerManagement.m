@@ -19,7 +19,7 @@
         [app setIdleTimerDisabled:true];
         
         result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
-        jsString = [result toSuccessCallbackString:callbackId];
+        jsString = [result toSuccessCallbackString:command.callbackId];
     }
     else {
         result = [CDVPluginResult resultWithStatus:CDVCommandStatus_ILLEGAL_ACCESS_EXCEPTION messageAsString:@"IdleTimer already disabled"];
@@ -41,7 +41,7 @@
         [app setIdleTimerDisabled:false];
         
         result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
-        jsString = [result toSuccessCallbackString:callbackId];
+        jsString = [result toSuccessCallbackString:command.callbackId];
     }
     else {
         result = [CDVPluginResult resultWithStatus:CDVCommandStatus_ILLEGAL_ACCESS_EXCEPTION messageAsString:@"IdleTimer not disabled"];
