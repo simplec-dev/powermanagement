@@ -2,7 +2,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	id="com.simplec.plugins.powermanagement"
-	version="0.2.1">
+	version="0.2.2">
 
 	<name>PowerManagement</name>
 	
@@ -10,7 +10,7 @@
 			This plugin control powermanagement so that an application can run for a long time for iOS.
 		</description>
 	
-		<license>MIT</license>
+		<license>Apache 2.0</license>
 		
 	<engines>
 		<engine name="cordova" version=">=2.3.0" />
