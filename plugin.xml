@@ -6,33 +6,31 @@
 
 	<name>PowerManagement</name>
 	
-		<description>
-			This plugin control powermanagement so that an application can run for a long time for iOS.
-		</description>
+	<description>
+		This plugin control powermanagement so that an application can run for a long time for iOS.
+	</description>
 	
-		<license>Apache 2.0</license>
+	<license>Apache 2.0</license>
 		
 	<engines>
 		<engine name="cordova" version=">=2.3.0" />
 	</engines>
 	
-	
-	<asset src="www/PowerManagement.js" target="PowerManagement.js" />
+	<js-module src="www/PowerManagement.js" name="PowerManagement">
+		<clobbers target="PowerManagement" />
+	</js-module>
 	
 	<!-- ios -->
 	<platform name="ios">
-		<!-- Cordova < 2.3 -->
-        <plugins-plist key="PowerManagement" string="PowerManagement" />
-        
-		<!-- Cordova >= 2.3 -->
-		<config-file target="config.xml" parent="plugins">
+
+		<config-file target="config.xml" parent="/*">
 			<feature name="PowerManagement">
 				<param name="ios-package" value="PowerManagement" />
 			</feature>
 		</config-file>
 
-		
 		<header-file src="src/ios/PowerManagement.h" />
 		<source-file src="src/ios/PowerManagement.m" />
+		
 	</platform>
 </plugin>
