@@ -13,11 +13,16 @@ It should be used for applications which keep running for a long time without an
 
 For details on power functionality see:
 
-* Android: [PowerManager](http://developer.android.com/reference/android/os/PowerManager.html)
 * iOS: [idleTimerDisabled](http://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplication_Class/Reference/Reference.html#//apple_ref/occ/instp/UIApplication/idleTimerDisabled)
-* WindowsPhone: [UserIdleDetectionMode](http://msdn.microsoft.com/en-US/library/windowsphone/develop/microsoft.phone.shell.phoneapplicationservice.useridledetectionmode%28v=vs.105%29.aspx)
 
-Usage (PhoneGap Build)
----------
-Add the following xml to your config.xml to always use the latest version of this plugin: 
-`<gap:plugin name="com.simplec.plugins.powermanagement" />`
+
+Using the plugin
+----------------
+
+	// prevent device from sleeping
+    window.plugins.powerManagement.acquire();
+    
+	// allow device to sleep
+    window.plugins.powerManagement.release();
+    
+    
