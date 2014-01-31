@@ -2,7 +2,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	id="com.simplec.plugins.powermanagement"
-	version="0.3.2">
+	version="0.3.3">
 
 	<name>PowerManagement</name>
 	
@@ -17,7 +17,7 @@
 	</engines>
 	
 	<js-module src="www/PowerManagement.js" name="PowerManagement">
-		<clobbers target="PowerManagement" />
+		<clobbers target="window.plugins.powerManagement" />
 	</js-module>
 	
 	<!-- ios -->
