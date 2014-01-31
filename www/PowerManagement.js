@@ -1,6 +1,4 @@
 
-var cordovaRef = window.PhoneGap || window.Cordova || window.cordova;
-
 var PowerManagement = function() {
 };
 
@@ -14,7 +12,7 @@ var PowerManagement = function() {
  *            wake-lock
  */
 PowerManagement.prototype.acquire = function(successCallback, failureCallback) {
-	cordovaRef.exec(successCallback, failureCallback, 'PowerManagement', 'acquire', []);
+	cordova.exec(successCallback, failureCallback, 'PowerManagement', 'acquire', []);
 };
 
 /**
@@ -27,14 +25,7 @@ PowerManagement.prototype.acquire = function(successCallback, failureCallback) {
  *            wake-lock
  */
 PowerManagement.prototype.release = function(successCallback, failureCallback) {
-	cordovaRef.exec(successCallback, failureCallback, 'PowerManagement', 'release', []);
+	cordova.exec(successCallback, failureCallback, 'PowerManagement', 'release', []);
 };
 
-if (cordovaRef) {
-	if(!window.plugins) {
-	    window.plugins = {};
-	}
-	if (!window.plugins.powerManagement) {
-	    window.plugins.powerManagement = new PowerManagement();
-	}
-}
+module.exports = new PowerManagement();
