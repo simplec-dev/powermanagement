@@ -2,7 +2,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	id="com.simplec.plugins.powermanagement"
-	version="0.3.5">
+	version="0.4.0">
 
 	<name>PowerManagement</name>
 	
@@ -33,4 +33,17 @@
 		<source-file src="src/ios/PowerManagement.m" />
 		
 	</platform>
+
+	  <!-- android -->
+	  <platform name="android">
+	    <config-file target="res/xml/config.xml" parent="/*">
+	      <feature name="PowerManagement">
+	        <param name="android-package" value="com.simplec.phonegap.plugins.powermanagement.PowerManagement" />
+	      </feature>
+	    </config-file>
+	
+	
+	    <source-file src="src/android/com/simplec/phonegap/plugins/powermanagement/PowerManagement.java" target-dir="src/com/simplec/phonegap/plugins/powermanagement"/>
+	  </platform>
+		
 </plugin>
